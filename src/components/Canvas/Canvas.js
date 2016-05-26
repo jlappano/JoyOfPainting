@@ -25,9 +25,10 @@ class Canvas extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.cellGrid) {
+        if(nextProps.cellGrid || nextProps.activeColor) {
             this.setState({
-                cellGrid: nextProps.cellGrid
+                cellGrid: nextProps.cellGrid,
+                activeColor: nextProps.activeColor
             });
 
         }
@@ -57,6 +58,7 @@ class Canvas extends React.Component {
             this.setState({
                 isPainting: false
             });
+            this.props.actions.updateCanvas(this.state.cellGrid);
         }
     }
 

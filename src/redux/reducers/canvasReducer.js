@@ -1,16 +1,13 @@
 import _ from 'underscore';
 
-let canvasReducer = function(canvas = {}, action) {
+let canvasReducer = function(grid = {}, action) {
     switch (action.type) {
         case 'UPDATE_CANVAS':
-            let updatedGrid = _.clone(canvas.cellGrid);
-            updatedGrid[action.firstIndex][action.secondIndex] = action.chosenColor;
-
-            return Object.assign({}, canvas, {
-                cellGrid: updatedGrid
+            return Object.assign({}, grid, {
+                cellGrid: action.grid
             })
         default:
-            return canvas;
+            return grid;
     }
 }
 

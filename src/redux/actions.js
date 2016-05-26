@@ -6,12 +6,10 @@ let actions = {
     }
   },
 
-  updateCanvas: function(chosenColor, firstIndex, secondIndex) {
+  updateCanvas: function(grid) {
     return {
       type: 'UPDATE_CANVAS',
-      chosenColor: chosenColor,
-      firstIndex: firstIndex,
-      secondIndex: secondIndex
+      grid: grid
     }
   }
 }
