@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import _ from 'underscore';
 import Cell from './../Cell/Cell';
+import CellRow from './../CellRow/CellRow';
 import './Canvas.scss';
 
 const propTypes = {
@@ -20,7 +21,8 @@ class Canvas extends React.Component {
         this.state = {
             cellGrid: props.cellGrid,
             isPainting: false,
-            activeColor: props.activeColor
+            activeColor: props.activeColor,
+            updatedCells: []
         };
     }
 
@@ -36,7 +38,6 @@ class Canvas extends React.Component {
 
     handleCellMouseDown(){
         if(!this.state.isPainting){
-            console.log('mouseDown');
             this.setState({
                 isPainting: true
             });
@@ -44,9 +45,14 @@ class Canvas extends React.Component {
     }
 
     handleCellHover(x, y){
+
         if(this.state.isPainting){
+            let updatedCellRow = _.clone(this.state.cellGrid[x]);
+            updatedCellRow[y] = this.state.activeColor;
+
             let updatedCellGrid = _.clone(this.state.cellGrid);
-            updatedCellGrid[x][y] = this.state.activeColor;
+            updatedCellGrid[x] = updatedCellRow
+
             this.setState({
                 cellGrid: updatedCellGrid
             });
@@ -62,41 +68,23 @@ class Canvas extends React.Component {
         }
     }
 
-    handleCellPaint(x, y){
-        this.props.actions.updateCanvas(this.props.activeColor, x, y);
-    }
-
-
-
     render() {
-        let cells = [];
-        let key = 0;
-        let firstIndex = 0;
-        let secondIndex = 0;
+        let cellRows = [];
         
-        this.state.cellGrid.forEach(function (row, i) {
-            row.forEach(function (color, j) {
-                firstIndex = i;
-                secondIndex = j;
-
-                cells.push(<Cell 
-                    key={key} 
-                    color={color}
-                    firstIndex={firstIndex}
-                    secondIndex={secondIndex}
-                    identifier={key}
-                    onMouseDown={this.handleCellMouseDown.bind(this)}
-                    onMouseUp={this.handleCellMouseUp.bind(this)}
-                    onHover={this.handleCellHover.bind(this)}
-                />);
-                key++;
-            }.bind(this));
-            key++;
+        this.state.cellGrid.forEach(function (row, rowIndex) {
+            cellRows.push(<CellRow
+                rowIndex={rowIndex}
+                key={rowIndex}
+                cells={row}
+                onMouseDown={this.handleCellMouseDown.bind(this)}
+                onMouseUp={this.handleCellMouseUp.bind(this)}
+                onHover={this.handleCellHover.bind(this)}
+            />);
         }.bind(this));
 
         return (
             <div className='canvas'>
-                {cells}
+                {cellRows}
             </div>
         );
     }

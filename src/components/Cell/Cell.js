@@ -7,7 +7,6 @@ const propTypes = {
     onMouseDown: PropTypes.func,
     onMouseUp: PropTypes.func,
     onHover: PropTypes.func,
-    identifier: PropTypes.number,
     firstIndex: PropTypes.number,
     secondIndex: PropTypes.number
 };
@@ -45,6 +44,7 @@ class Cell extends React.Component {
     }
 
     render() {
+        console.log('rendering cell');
         let cellStyle = {
             backgroundColor: this.props.color
         };
