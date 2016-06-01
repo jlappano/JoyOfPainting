@@ -5,14 +5,7 @@ import Header from './../components/Header/Header';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from '../redux/actions';
-
-const propTypes = {
-
-};
-
-const defaultProps = {
-
-};
+import './Home.scss';
 
 //React is imported as a whole, so component method must be called from it
 class Home extends React.Component {
@@ -24,6 +17,10 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+                <Header
+                    title = 'The Joy of Painting'
+                />
+                <div className='canvasContainer'>
                 <Canvas
                     activeColor = {this.props.pallete.activeColor}
                     cellGrid = {this.props.canvas.cellGrid}
@@ -34,14 +31,11 @@ class Home extends React.Component {
                     colorChoices = {this.props.pallete.colorChoices}
                     actions = {this.props.actions}
                 />
+                </div>
             </div>
         );
     }
 }
-
-Home.propTypes = propTypes;
-Home.defaultProps = defaultProps;
-
 
 function mapStateToProps(state) {
   return state
