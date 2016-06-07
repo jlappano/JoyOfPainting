@@ -1,11 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Chicle);
 body {
     margin: 0px;
-    background-color: #E5E7E9;
+    font-family: 'Chicle', cursive;
+    background-image: url(http://www.publicdomainpictures.net/pictures/90000/velka/rays-star-burst-background.jpg);
+    background-position: center;
 
     .canvasContainer {
-        background-color: aqua;
         padding-top: 50px;
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 100px;
+        padding-bottom: 50px;
+        background-color: rgba(251, 201, 138, .5);
     }
 }

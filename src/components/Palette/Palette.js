@@ -24,8 +24,8 @@ class Palette extends React.Component {
 
         return (
             <div className='palette'>
-                <div className='colorChoice' style={inlineStyle}></div>
                 {colorChoices}
+                <div className='chosenColor' style={inlineStyle}></div>
             </div>
         );
     }

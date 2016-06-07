@@ -20,25 +20,14 @@ const defaultProps = {
 class CellRow extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
-        // console.log(nextProps.cells);
-        // console.log(this.props.cells);
         let indexSize = nextProps.cells.length;
         for(let index = 0; index < indexSize; index++){
-            // console.log(nextProps.cells[index] + '; ' + this.props.cells[index]);
             if(nextProps.cells[index] !== this.props.cells[index]){
-                // console.log('true!!');
                 return true;
             }
         }
-        // let a = _.intersection(nextProps.cells, this.props.cells);
-        // console.log(a.length);
 
-        // console.log('logged difference ' + nextProps));
-        // if(_.difference(nextProps.cells, this.props.cells).length > 1){
-            // return true;
-        // }
         return false;
-        // return false;
     }
 
     render() {
