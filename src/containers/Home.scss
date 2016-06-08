@@ -11,6 +11,11 @@ body {
         margin-right: 200px;
         margin-bottom: 100px;
         padding-bottom: 50px;
-        background-color: rgba(251, 201, 138, .5);
+        background: -moz-radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)); /* For Firefox 3.6 to 15 */
+        background: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)); /* Standard syntax */
     }
 }
+
+
+
+//background-color: rgba(251, 201, 138, .5);
