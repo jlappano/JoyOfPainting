@@ -6,9 +6,9 @@
   "scripts": {
     "build": "webpack --config ./webpack/webpack.prod.config.js --progress --colors",
     "start": {
-      "command": "npm run deploy && npm start",
+      "command": "node ./src/server.js"
       "env": {
-        "NODE_ENV": "production"
+          "NODE_ENV": "production"
         }
       }
   },
