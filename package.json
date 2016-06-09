@@ -5,7 +5,12 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack --config ./webpack/webpack.prod.config.js --progress --colors",
-    "start": "node ./src/server.js"
+    "start": {
+      "command": "npm run deploy && npm start",
+      "env": {
+        "NODE_ENV": "production"
+        }
+      }
   },
   "author": "jlappano",
   "license": "ISC",
