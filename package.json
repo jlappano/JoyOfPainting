@@ -5,12 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack --config ./webpack/webpack.prod.config.js --progress --colors",
-    "start": {
-      "command": "node ./src/server.js",
-      "env": {
-          "NODE_ENV": "production"
-        }
-      }
+    "start": "node ./src/server.js"
   },
   "author": "jlappano",
   "license": "ISC",
