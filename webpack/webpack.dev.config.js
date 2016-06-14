@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: [
         "webpack-hot-middleware/client",
-        "./src/app.js"
+        "../src/app.js"
     ],
     output: {
         filename: "bundle.js",
