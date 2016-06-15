@@ -44,7 +44,6 @@ class Cell extends React.Component {
     }
 
     render() {
-        console.log('rendering cell');
         let cellStyle = {
             backgroundColor: this.props.color
         };
