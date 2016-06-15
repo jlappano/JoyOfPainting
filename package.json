@@ -4,8 +4,8 @@
   "description": "You too can paint almighty pictures.",
   "main": "app.js",
   "scripts": {
-    "build": "webpack --config ./webpack/webpack.prod.config.js --progress --colors",
-    "start": "node ./server.js"
+    "start": "node ./server.js",
+    "postinstall": "webpack -p --config ./webpack/webpack.prod.config.js"
   },
   "author": "jlappano",
   "license": "ISC",
