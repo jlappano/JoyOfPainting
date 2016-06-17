@@ -1,8 +1,14 @@
 .palette {
     overflow: hidden;
-    position: absolute;
     width: 65px;
-    top: 300px;
-    left: 260px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 5%;
+}
+
+@media (max-width: 800px) {
+    .palette {
+        position: absolute;
+    }
 }
 

@@ -21,14 +21,14 @@ class Home extends React.Component {
                     title = 'The Joy of Painting'
                 />
                 <div className='canvasContainer'>
-                <Canvas
-                    activeColor = {this.props.pallete.activeColor}
-                    cellGrid = {this.props.canvas.cellGrid}
-                    actions = {this.props.actions}
-                />
                 <Palette
                     activeColor = {this.props.pallete.activeColor}
                     colorChoices = {this.props.pallete.colorChoices}
+                    actions = {this.props.actions}
+                />
+                <Canvas
+                    activeColor = {this.props.pallete.activeColor}
+                    cellGrid = {this.props.canvas.cellGrid}
                     actions = {this.props.actions}
                 />
                 </div>

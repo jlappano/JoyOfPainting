@@ -7,15 +7,27 @@ body {
 
     .canvasContainer {
         padding-top: 50px;
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 15%;
+        margin-right: 15%;
         margin-bottom: 100px;
         padding-bottom: 50px;
         background: -moz-radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)); /* For Firefox 3.6 to 15 */
         background: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0)); /* Standard syntax */
     }
+
+    @media (max-width: 1100px) {
+        .canvasContainer {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .canvasContainer {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
 }
 
 
-
-//background-color: rgba(251, 201, 138, .5);
