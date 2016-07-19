@@ -18,6 +18,11 @@ const defaultProps = {
     onHover: function(){}
 };
 
+//Cell has a cellstyle made if it's given color
+//it has been passed the actions onClick, onMouseDown, and onMouseUp which have been defined 
+//in Canvas.js
+//On mouseDown painting is initiated and subsequent hovering results in coloring. 
+//On mouseUp painting is cancelled and subsequent hovering results in no action. 
 class Cell extends React.Component {
 
     handleClick(event) {

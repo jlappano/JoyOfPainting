@@ -1,3 +1,4 @@
+//updates pallete with chosen color in action object
 let palleteReducer = function(pallete = {}, action) {
     switch (action.type) {
         case 'CHOOSE_ACTIVE_COLOR':

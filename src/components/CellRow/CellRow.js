@@ -17,6 +17,8 @@ const defaultProps = {
     onHover: function(){}
 };
 
+//CellRow encapuslates only one row of the cell grid. It renders each individual cell within it.
+//The method shouldComponentUpdate checks to see whether the incoming state affects it's cells, cancelling it's redender if false.  
 class CellRow extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {

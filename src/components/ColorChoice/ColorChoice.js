@@ -11,6 +11,10 @@ const defaultProps = {
 
 };
 
+//colorChoice has a background color from it's given color attribute, 
+//and it knows about the current active color to determine whether it is active or not
+//onclick colorChoice fires the chooseActiveColor action. 
+//on rerender colorChoice will reflect whether is it now active or not. 
 class ColorChoice extends React.Component {
 
     updatedActiveColor(){

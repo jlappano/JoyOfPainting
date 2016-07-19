@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import Home from './containers/Home'
 import configureStore from './redux/store'
 
+//prepare white grid
 let grid = Array(...Array(50)).map(() => Array(50).fill('#FFFFFF'));
 let initialState = {
     pallete: {
@@ -23,6 +24,7 @@ let initialState = {
 
 let store = configureStore(initialState)
 
+//render home container passing configured store
 ReactDom.render(
     <Provider store={store}>
         <Home/>

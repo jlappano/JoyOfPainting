@@ -5,6 +5,7 @@ const propTypes = {
     title: PropTypes.string.isRequired,
 };
 
+//Header only renders the given title, it knows no actions
 class Header extends React.Component {
     render() {
         return (

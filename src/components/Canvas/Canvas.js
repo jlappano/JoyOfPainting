@@ -14,6 +14,8 @@ const defaultProps = {
 
 };
 
+//Canvas has a cellgrid which has been passed to it, a boolean isPainting to toggle actions,
+//active color which will be passed down the component chain.
 class Canvas extends React.Component {
 
     constructor(props) {
@@ -21,8 +23,7 @@ class Canvas extends React.Component {
         this.state = {
             cellGrid: props.cellGrid,
             isPainting: false,
-            activeColor: props.activeColor,
-            updatedCells: []
+            activeColor: props.activeColor
         };
     }
 
@@ -36,6 +37,7 @@ class Canvas extends React.Component {
         }
     }
 
+    //toggle painting
     handleCellMouseDown(){
         if(!this.state.isPainting){
             this.setState({
@@ -44,6 +46,8 @@ class Canvas extends React.Component {
         }
     }
 
+    //if the app is painting, update the affected cell row and then update the entire grid with
+    //the updated row. 
     handleCellHover(x, y){
 
         if(this.state.isPainting){
@@ -59,6 +63,7 @@ class Canvas extends React.Component {
         }
     }
 
+    //toggle isPainting, call reducer to update the entire canvas. 
     handleCellMouseUp(){
         if(this.state.isPainting){
             this.setState({
@@ -68,6 +73,7 @@ class Canvas extends React.Component {
         }
     }
 
+    //render only cell rows, passing defined actions down. 
     render() {
         let cellRows = [];
         

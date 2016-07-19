@@ -11,6 +11,8 @@ const defaultProps = {
 
 };
 
+//a Palette has a collection of color choices, and an inlineStyle of the given activeColor
+//it triggers no actions put does pass them down to each colorChoice
 class Palette extends React.Component {
     render() {
         let colorChoices = [];
